@@ -23,10 +23,30 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+models.py
+from django.db import models
+from django.contrib import admin
 
+# create your models here
+class BankLooan(models.Model):
+    loan_id = odels.IntegerField(primary_key=True)
+    loan_type = models.CharField(max_length=100)
+    loan_amt = models.FloatFiels()
+    cust_acno = models.IntegerField()
+    cust_name = models.CharField(max_length=50)
+
+class BankLoan(admin.ModelAdmin):
+    list_display=('loan_id','loan_type','loan_amt','cust_acno','cust_name')
+    admins.py
+    from django.contrib import admin
+from .models import Bankloan , BankLoanAdmin
+# Register your models here.
+admin.site.register(Bankloan , BankLoanAdmin)
 
 
 ## OUTPUT
+![WhatsApp Image 2024-12-14 at 10 10 02 AM](https://github.com/user-attachments/assets/0fca0c60-49cb-4f99-83d2-e7e537b54d68)
+
 ![alt text](<Screenshot 2024-11-26 140404.png>)
 ![alt text](<Screenshot 2024-11-26 140541.png>)
 
